@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "LGTM from My List",
+  "description": "Copy links to LGTM image from lgtm.in My List.",
+  "version": "0.1",
+
+  "browser_action": {
+    "default_title": "LGTM from My List",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js":      ["jquery.js", "content.js"],
+      "run_at":  "document_end"
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "clipboardWrite",
+    "storage"
+  ],
+  "options_page": "options.html"
+}
